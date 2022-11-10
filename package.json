@@ -1,12 +1,12 @@
 {
-  "name": "n8n-nodes-baresquare",
-  "version": "0.1.0",
+  "name": "n8n-nodes-baresquare-tickets",
+  "version": "0.2.0",
   "description": "This node is used to fetch last tickets from the Baresquare Api or trigger when a new ticket is created.",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "www.baresquare.com",
   "author": {
     "name": "Georgios Gagrinas",
     "email": "giorgos.gagrinas@baresquare.com"
