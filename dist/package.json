@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-baresquare",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "This node is used to fetch last tickets from the Baresquare Api or trigger when a new ticket is created.",
     "keywords": [
         "n8n-community-node-package"
@@ -20,6 +20,7 @@
         "build": "tsc && gulp build:icons",
         "dev": "tsc --watch",
         "format": "prettier nodes credentials --write",
+        "lint2": "tslint -p tsconfig.json -c tslint.json && eslint package.json",
         "lint": "tslint -p tsconfig.json -c tslint.json && eslint nodes credentials package.json",
         "lintfix": "tslint --fix -p tsconfig.json -c tslint.json && eslint nodes credentials package.json --fix",
         "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"

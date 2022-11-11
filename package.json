@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-baresquare",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "This node is used to fetch last tickets from the Baresquare Api or trigger when a new ticket is created.",
   "keywords": [
     "n8n-community-node-package"
