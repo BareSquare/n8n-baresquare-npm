@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-baresquare-tickets",
+  "name": "n8n-nodes-baresquare",
   "version": "0.2.0",
   "description": "This node is used to fetch last tickets from the Baresquare Api or trigger when a new ticket is created.",
   "keywords": [
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ggagrinas/n8n-baresquare"
+    "url": "https://github.com/BareSquare/n8n-baresquare-npm"
   },
   "main": "index.js",
   "scripts": {

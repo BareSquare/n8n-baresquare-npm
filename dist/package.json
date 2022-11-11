@@ -6,14 +6,14 @@
         "n8n-community-node-package"
     ],
     "license": "MIT",
-    "homepage": "",
+    "homepage": "www.baresquare.com",
     "author": {
         "name": "Georgios Gagrinas",
         "email": "giorgos.gagrinas@baresquare.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ggagrinas/n8n-baresquare"
+        "url": "https://github.com/BareSquare/n8n-baresquare-npm"
     },
     "main": "index.js",
     "scripts": {
