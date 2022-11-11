@@ -29,6 +29,24 @@ class Baresquare {
             polling: true,
             properties: [
                 {
+                    displayName: 'Select Server',
+                    name: 'server',
+                    type: 'options',
+                    options: [
+                        {
+                            name: 'Baresquare US Server',
+                            value: 'us',
+                        },
+                        {
+                            name: 'Baresquare EU Server',
+                            value: 'eu',
+                        },
+                    ],
+                    required: true,
+                    default: 'us',
+                    description: 'Select domain which tickets are retrieved',
+                },
+                {
                     displayName: 'Get Data',
                     name: 'getData',
                     type: 'options',
@@ -64,8 +82,13 @@ class Baresquare {
         let responseData;
         const getData = this.getNodeParameter('getData', 'newTicketsCreated');
         const ticketLimit = this.getNodeParameter('limit', 30);
+        const server = this.getNodeParameter('server');
         const credentials = await this.getCredentials('baresquareApi');
         const yesterday = (0, moment_1.default)().subtract(1, 'days').toDate().toISOString().slice(0, 10);
+        let domainUri = `https://my.baresquare.com/api/p/v2/incidents`;
+        if (server === 'us') {
+            domainUri = `https://use.baresquare.com/api/p/v2/incidents`;
+        }
         const options = {
             headers: {
                 'Accept': 'appliceation/json',
@@ -76,14 +99,14 @@ class Baresquare {
                 limit: ticketLimit,
             },
             method: 'GET',
-            uri: `https://my.baresquare.com/api/p/v2/incidents`,
+            uri: domainUri,
             json: true,
         };
         try {
             responseData = await this.helpers.request(options);
         }
         catch (error) {
-            throw new n8n_workflow_1.NodeOperationError(this.getNode(), `COuld not fetch data from API with following error:${error.message}`);
+            throw new n8n_workflow_1.NodeOperationError(this.getNode(), `Could not fetch data from API with following error:${error.message}`);
         }
         responseData = responseData.results;
         if (getData === 'newTicketsCreated') {
